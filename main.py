@@ -1,3 +1,9 @@
+import sys
+import os
+
+# ✅ Add parent directory to import path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from Project.scanner import scan_folders
 from Project.embedder import parse_and_embed
 from Project.indexer import index_documents
@@ -8,7 +14,6 @@ def run_initial_scan():
     print("🔍 Scanning folders...")
     paths = scan_folders()
     print(f"✅ Found {len(paths)} valid files for processing.\n")
-
 
     print("📄 Parsing and embedding...")
     docs = parse_and_embed(paths)
