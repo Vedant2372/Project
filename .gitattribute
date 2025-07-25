@@ -1,0 +1,4 @@
+# Normalize line endings to LF for all code files
+*.py text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
